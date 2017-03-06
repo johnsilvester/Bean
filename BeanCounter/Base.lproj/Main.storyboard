@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11761" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="oRJ-Dy-d8j">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="12" y="145"/>
+        </scene>
+        <!--Capture View Controller-->
+        <scene sceneID="j2m-fH-ajY">
+            <objects>
+                <viewController id="oRJ-Dy-d8j" customClass="CaptureViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WsH-gp-D6F"/>
+                        <viewControllerLayoutGuide type="bottom" id="b4f-J9-XVT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xUD-nG-la5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IAc-Rd-Hhm">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.80000001192092896" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5RA-HQ-eQh">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" id="bXH-Y1-3UT">
+                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Gqr-ci-OPZ">
+                                            <rect key="frame" x="20" y="7" width="121" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="Image"/>
+                                                <segment title="Mask"/>
+                                            </segments>
+                                            <connections>
+                                                <action selector="onPreviewModeSelected:" destination="oRJ-Dy-d8j" eventType="valueChanged" id="bcl-YE-A2n"/>
+                                            </connections>
+                                        </segmentedControl>
+                                    </barButtonItem>
+                                    <barButtonItem image="SwitchCamera.png" style="plain" id="hqV-Sc-win">
+                                        <connections>
+                                            <action selector="onSwitchCameraButtonPressed" destination="oRJ-Dy-d8j" id="CuI-ES-9E4"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="IFn-Kx-X31"/>
+                                    <barButtonItem title="Classify" style="plain" id="DP4-Wt-D0W">
+                                        <connections>
+                                            <segue destination="42A-VH-p0Y" kind="presentation" identifier="showReviewModally" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="8dm-EH-oB7"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="IAc-Rd-Hhm" firstAttribute="leading" secondItem="xUD-nG-la5" secondAttribute="leadingMargin" constant="-20" id="0M1-xs-obi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5RA-HQ-eQh" secondAttribute="trailing" constant="-20" id="22o-gG-i6B"/>
+                            <constraint firstItem="b4f-J9-XVT" firstAttribute="top" secondItem="5RA-HQ-eQh" secondAttribute="bottom" id="2mM-sg-YFe"/>
+                            <constraint firstItem="5RA-HQ-eQh" firstAttribute="leading" secondItem="xUD-nG-la5" secondAttribute="leadingMargin" constant="-20" id="Glz-Sb-bPX"/>
+                            <constraint firstItem="IAc-Rd-Hhm" firstAttribute="top" secondItem="xUD-nG-la5" secondAttribute="topMargin" id="M5i-8L-J09"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IAc-Rd-Hhm" secondAttribute="trailing" constant="-20" id="YRX-j3-g8e"/>
+                            <constraint firstItem="b4f-J9-XVT" firstAttribute="top" secondItem="IAc-Rd-Hhm" secondAttribute="bottom" id="bEG-Nd-9GP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundView" destination="IAc-Rd-Hhm" id="xYn-eC-J4J"/>
+                        <outlet property="classifyButton" destination="DP4-Wt-D0W" id="f3V-D1-r3z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="unG-mA-N0a" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="D4T-sA-LhR"/>
+            </objects>
+            <point key="canvasLocation" x="769" y="146"/>
+        </scene>
+        <!--Review View Controller-->
+        <scene sceneID="RXB-gi-ja9">
+            <objects>
+                <viewController id="42A-VH-p0Y" customClass="ReviewViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Umn-Yr-vaR"/>
+                        <viewControllerLayoutGuide type="bottom" id="K0G-9L-mVy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Vaz-BS-qaf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QmH-Dr-IE6">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.097324871859999995" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" alpha="0.80000001192092896" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Dv-Zi-hXd">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="trash" id="Ah6-P4-1UO">
+                                        <connections>
+                                            <action selector="onDeleteButtonPressed" destination="42A-VH-p0Y" id="Pdb-wl-JHp"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ELz-qi-v0k"/>
+                                    <barButtonItem style="plain" systemItem="save" id="Cdn-td-5EI">
+                                        <connections>
+                                            <action selector="onSaveButtonPressed" destination="42A-VH-p0Y" id="BQt-Xq-2kk"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="uAe-M6-aI7">
+                                <rect key="frame" x="282" y="281" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="caption" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cnu-wm-qMT">
+                                <rect key="frame" x="16" y="337" width="143" height="21"/>
+                                <color key="backgroundColor" red="0.44918435810000001" green="0.30469962950000001" blue="0.1115214825" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.97176958160000004" green="1" blue="0.97711933230000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="QmH-Dr-IE6" firstAttribute="leading" secondItem="Vaz-BS-qaf" secondAttribute="leadingMargin" constant="-20" id="09e-MI-WjK"/>
+                            <constraint firstItem="Cnu-wm-qMT" firstAttribute="centerX" secondItem="Vaz-BS-qaf" secondAttribute="centerX" constant="113" id="0zc-Kc-xMg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9Dv-Zi-hXd" secondAttribute="trailing" constant="-20" id="CsB-8K-Ukz"/>
+                            <constraint firstItem="uAe-M6-aI7" firstAttribute="centerX" secondItem="Vaz-BS-qaf" secondAttribute="centerX" id="MYf-HK-yLP"/>
+                            <constraint firstItem="uAe-M6-aI7" firstAttribute="centerY" secondItem="Vaz-BS-qaf" secondAttribute="centerY" id="WLt-Hx-Keh"/>
+                            <constraint firstItem="QmH-Dr-IE6" firstAttribute="top" secondItem="Vaz-BS-qaf" secondAttribute="topMargin" id="cWp-Ho-e8c"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QmH-Dr-IE6" secondAttribute="trailing" constant="-20" id="gfQ-Sc-feq"/>
+                            <constraint firstItem="K0G-9L-mVy" firstAttribute="top" secondItem="QmH-Dr-IE6" secondAttribute="bottom" id="jsL-Ir-OMi"/>
+                            <constraint firstItem="9Dv-Zi-hXd" firstAttribute="top" secondItem="Cnu-wm-qMT" secondAttribute="bottom" constant="12" id="ko7-dV-bFw"/>
+                            <constraint firstItem="K0G-9L-mVy" firstAttribute="top" secondItem="9Dv-Zi-hXd" secondAttribute="bottom" id="oGu-TB-IQM"/>
+                            <constraint firstItem="9Dv-Zi-hXd" firstAttribute="leading" secondItem="Vaz-BS-qaf" secondAttribute="leadingMargin" constant="-20" id="vta-Qr-FEi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="uAe-M6-aI7" id="HYn-Vn-SKx"/>
+                        <outlet property="imageView" destination="QmH-Dr-IE6" id="NG8-HH-UC8"/>
+                        <outlet property="label" destination="Cnu-wm-qMT" id="yUi-MM-inL"/>
+                        <outlet property="toolbar" destination="9Dv-Zi-hXd" id="jTK-uM-Q24"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NKZ-0q-ofd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1512.8" y="144.3778110944528"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="SwitchCamera.png" width="25" height="25"/>
+    </resources>
+</document>
